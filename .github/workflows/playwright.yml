@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     name: Run Playwright E2E tests
-    timeout-minutes: 60
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     container: mcr.microsoft.com/playwright:v1.27.0-jammy
     env:
