@@ -26,6 +26,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
+          ls
           HOME=/root npx playwright test
 
       - name: Create test summary
