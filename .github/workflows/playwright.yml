@@ -16,7 +16,7 @@ jobs:
       BASEURL: https://www.marcusfelling.com
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: "14.x"
 
@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          HOME=/root npx playwright test
+          npx playwright test
 
       - name: Create test summary
         uses: test-summary/action@dist
@@ -35,7 +35,7 @@ jobs:
           paths: ./test-results/junit.xml
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
