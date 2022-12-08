@@ -7,4 +7,8 @@ test('should allow me to view landing page', async ({ page }) => {
   await expect(page).toHaveURL('');
   // Assert site description is correct
   await expect(page.locator('.site-description')).toHaveText('A blog about things I learn at the keyboard: DevOps, CI/CD, Cloud, Automation, to name a few….');
+  // Assert footer widgets are present
+  await expect(page.getByRole('heading', { name: 'Subscribe' })).toBeTruthy();
+  await expect(page.getByRole('heading', { name: 'Recent Blog Posts' })).toBeTruthy();
+  await expect(page.getByRole('heading', { name: 'Social' })).toBeTruthy();
 });
