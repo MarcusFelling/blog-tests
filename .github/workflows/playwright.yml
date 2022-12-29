@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container: mcr.microsoft.com/playwright:v1.28.1-jammy
     env:
-      BASEURL: https://www.marcusfelling.com
+      BASEURL: https://marcusfelling.com
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
