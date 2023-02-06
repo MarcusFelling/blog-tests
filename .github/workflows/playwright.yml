@@ -4,6 +4,8 @@ on:
     - cron: "0 0 * * *" # Run at the end of every day
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
