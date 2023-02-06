@@ -4,21 +4,23 @@ on:
     - cron: "0 0 * * *" # Run at the end of every day
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   test:
     name: Run Playwright E2E tests
-    timeout-minutes: 20
+    timeout-minutes: 7
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.29.1-jammy
+    container: mcr.microsoft.com/playwright:v1.30.0-jammy
     env:
       BASEURL: https://marcusfelling.com
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "14.x"
+          node-version: "18"
 
       - name: Install dependencies
         run: |
