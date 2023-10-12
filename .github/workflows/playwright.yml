@@ -13,7 +13,7 @@ jobs:
     name: Run Playwright E2E tests
     timeout-minutes: 7
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.37.1-jammy
+    container: mcr.microsoft.com/playwright:v1.39.0-jammy
     env:
       BASEURL: https://marcusfelling.com
     steps:
