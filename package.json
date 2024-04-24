@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/MarcusFelling/blog-tests#readme",
   "devDependencies": {
-    "@playwright/test": "^1.41.2"
+    "@playwright/test": "^1.43.1"
   },
   "dependencies": {
     "dotenv": "^16.0.3"
