@@ -1,17 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('should allow me to check all links', async ({ page, request }) => {
+test('should verify all archive links return status 200', async ({ page, request }) => {
 	await page.goto('/archives');
 	// Get all links on archives page
-	const links = await page.locator('.entry-content a:visible');
-	const count = await links.count()
+	const links = await page.$$eval('a', elements => elements.map(el => el.href));
 	// Loop through each link and check if response is 200
-	for (let i = 0; i < count; i++) {
-	  const link = await links.nth(i);
-	  const href = await link.getAttribute('href');
-	  if (href) {
-		const response = await request.get(href);
-		await expect(response.ok()).toBeTruthy();
-	  }
+	for (const link of links) {
+	  const response = await request.get(link);
+	  expect(response.status(), `Check failed for ${link}`).toBe(200);
 	}
-  });
+});

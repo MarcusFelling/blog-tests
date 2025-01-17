@@ -6,15 +6,14 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarcusFelling/blog-tests.git"
+    "url": "git+https://github.com/MarcusFelling/blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarcusFelling/blog-tests/issues"
+    "url": "https://github.com/MarcusFelling/blog/issues"
   },
-  "homepage": "https://github.com/MarcusFelling/blog-tests#readme",
   "devDependencies": {
     "@playwright/test": "^1.49.1"
   },
